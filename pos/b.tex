@@ -3,12 +3,17 @@
 
 \begin{tikzpicture}[node distance = 2cm]
     % nodes
-    \node (mataa) [block] {\hyperlink{1-semestre}{MAT101}};
-    \node (matba) [block, below of = mataa] {MAT201};
-    \node (matca) [block, below of = matba] {MAT301};
-    \node (matda) [block, below of = matca] {MAT401};
-    \node (matea) [block, below of = matda] {MAT501};
-    \node (matfa) [block, below of = matea] {MAT601};
+    % analise
+    \node (mataa) [analise] {\hyperlink{1-semestre}{MAT101}};
+    \node (matba) [analise, below of = mataa] {\hyperlink{2-semestre}{MAT201}};
+    \node (matca) [analise, below of = matba] {\hyperlink{3-semestre}{MAT301}};
+    \node (matda) [analise, below of = matca] {\hyperlink{4-semestre}{MAT401}};
+    \node (matea) [analise, below of = matda] {\hyperlink{5-semestre}{MAT501}};
+    \node (matfa) [analise, below of = matea] {\hyperlink{6-semestre}{MAT601}};
+    % algebra
+    \node (matcb) [algebra, right of = mataa] {MAT302};
+    % geometria
+    \node (matcb) [geometria, right of = matcb] {MAT302};
     % edges
     \path [line] (mataa) -- (matba);
     \path [line] (matba) -- (matca);
