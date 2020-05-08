@@ -1,0 +1,89 @@
+\documentclass[12pt, openany]{memoir}
+
+\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{adjustbox}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{cite}
+\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{
+  a4paper
+  ,top    = 2.5cm
+  ,bottom = 2.5cm
+  ,left   = 2.5cm
+  ,right  = 2.5cm
+}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks   = true
+  ,linkcolor   = blue
+  ,urlcolor    = blue
+  ,citecolor   = blue
+  ,anchorcolor = blue
+}
+\urlstyle{same}
+\usepackage{lipsum}
+\usepackage{longtable}
+\usepackage{microtype}
+\usepackage{multirow}
+\usepackage{spreadtab}
+\usepackage{tikz}
+\usetikzlibrary{
+    arrows
+    , shapes.geometric
+}
+\usepackage{xcolor}
+
+\title{
+  Curso \\
+  Licenciatura em Matem\'atica \\
+  Projeto Pol\'{i}tico Pedag\'{o}gico
+}
+\author{Nosotros}
+\date{\today}
+
+\input{./set/discipline-codes}
+\input{./set/curriculum}
+\input{./set/program}
+\input{./set/tikz}
+
+\begin{document}
+
+% \maketitle
+\frontmatter
+\tableofcontents
+\listoffigures
+\listoftables
+\mainmatter
+
+% cap: apresentacao
+\input{./tex/1/1}
+
+% cap: matriz curricular
+\input{./tex/2/1}
+
+% ref: bibliografia
+\bibliographystyle{plain}
+\bibliography{./ref/references}
+
+\appendix
+% a: ementario
+\input{./pos/a.tex}
+% b: mapa de pre-requisitos
+\input{./pos/b.tex}
+
+\backmatter
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

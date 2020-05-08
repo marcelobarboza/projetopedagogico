@@ -1,0 +1,18 @@
+\chapter{Mapa de Pré-Requisitos}
+\label{apend:flowchart}
+
+\begin{tikzpicture}[node distance = 2cm]
+    % nodes
+    \node (mataa) [block] {\hyperlink{1-semestre}{MAT101}};
+    \node (matba) [block, below of = mataa] {MAT201};
+    \node (matca) [block, below of = matba] {MAT301};
+    \node (matda) [block, below of = matca] {MAT401};
+    \node (matea) [block, below of = matda] {MAT501};
+    \node (matfa) [block, below of = matea] {MAT601};
+    % edges
+    \path [line] (mataa) -- (matba);
+    \path [line] (matba) -- (matca);
+    \path [line] (matca) -- (matda);
+    \path [line] (matda) -- (matea);
+    \path [line] (matea) -- (matfa);
+\end{tikzpicture}

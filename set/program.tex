@@ -1,0 +1,65 @@
+% ementario
+\newcolumntype{B}{
+  @{}
+  p{6.5cm}
+  <{\raggedright}
+  p{6.5cm}
+  <{\raggedleft}
+  @{}
+}
+%
+\newtheoremstyle{ementathmstl}
+  {\topsep}   % ABOVESPACE
+  {\topsep}   % BELOWSPACE
+  {\itshape}  % BODYFONT
+  {0pt}       % INDENT
+  {\bfseries} % HEADFONT
+  {}          % HEADPUNCT
+  {8pt}       % HEADSPACE
+  {}          % CUSTOM-HEAD-SPEC
+\theoremstyle{ementathmstl}
+\newtheorem*{ementa}{Ementa}
+
+\newcommand{\ementadisciplina}[7]{
+  \begin{longtable}{B}
+    \toprule
+    \hyperlink{#1-semestre}{#2}\,\textbf{#3} & \textbf{Pr\'{e}-Requitos}\quad #4 \\
+    \midrule & \\
+    \multicolumn{2}{c}{
+    \begin{adjustbox}{max width=0.8\textwidth}
+      \begin{minipage}{0.8\linewidth}
+        \begin{ementa}
+          #5
+        \end{ementa}
+      \end{minipage}
+    \end{adjustbox}
+    } \\ & \\ \midrule & \\
+    \multicolumn{2}{c}{
+    \begin{adjustbox}{max width=0.8\textwidth}
+      \begin{minipage}{0.8\linewidth}
+        {\bfseries Bibliografia Básica}
+        \setlist[description]{font=\normalfont\space}
+        \begin{description}
+            #6
+        \end{description}
+      \end{minipage}
+    \end{adjustbox}
+    }\\ & \\ \midrule & \\
+    \multicolumn{2}{c}{
+    \begin{adjustbox}{max width=0.8\textwidth}
+      \begin{minipage}{0.8\textwidth}
+        {\bfseries Bibliografia Complementar}
+        \setlist[description]{font=\normalfont\space}
+        \begin{description}
+            #7
+        \end{description}
+      \end{minipage}
+    \end{adjustbox}
+    }\\ & \\
+    \bottomrule
+  \end{longtable}
+}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../main"
+%%% End:

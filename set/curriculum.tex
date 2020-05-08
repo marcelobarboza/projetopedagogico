@@ -1,0 +1,55 @@
+% glossario da matriz curricular
+\def\codigo{
+  \multirow{2}{*}{C\'{o}digo}
+}
+\def\atividadecurricular{
+  \multirow{2}{*}{Atividade Curricular}
+}
+\def\creditos{
+  \multicolumn{3}{c}{Cr\'{e}ditos}
+}
+\def\carga{
+  Carga
+}
+\def\horaria{
+  Hor\'{a}ria
+}
+%
+\newcolumntype{A}{
+  @{}
+  >{\centering}
+  p{1.5cm}
+  >{\raggedright}
+  p{6.5cm}
+  >{\centering}
+  p{1.0cm}
+  >{\centering}
+  p{1.0cm}
+  >{\centering}
+  p{1.0cm}
+  >{\centering\arraybackslash}
+  p{2.0cm}
+  @{}
+}
+%
+\newcommand{\matrizcurricularporsemestre}[3]{
+  \begin{table}[!htbp]
+    \centering
+    \caption*{\hypertarget{#1-semestre}{#1\textsuperscript{\d o} Semestre}}
+    \label{matrizcurricular:#1-semestre}
+    \begin{spreadtab}{{tabular}{A}}
+      \toprule
+      @\codigo & @\atividadecurricular & @\creditos & @\carga \\
+      & & @Teoria & @Pr\'{a}tica & @Total & @\horaria \\
+      \midrule
+      #2
+      \midrule
+      & & & & sum([0,-#3]:[0,-1]) & sum([0,-#3]:[0,-1]) \\
+      \bottomrule
+    \end{spreadtab}
+  \end{table}
+}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../main"
+%%% End:
